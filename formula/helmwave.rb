@@ -11,19 +11,19 @@ class Helmwave < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/helmwave/helmwave/releases/download/0.9.2/helmwave_0.9.2_darwin_amd64.tar.gz"
-    sha256 "de29ee65d51b2445d3794fa63cdbab4662c747cf607a7ed3b2bc42122f7ef91b"
+    sha256 "0dffd55606fdfb2ae3c7e8fd408f62353221255f1a2e73aa1e2a287c44602acf"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/helmwave/helmwave/releases/download/0.9.2/helmwave_0.9.2_darwin_arm64.tar.gz"
-    sha256 "60483bf95ea341edd01d49b6baa444a6a8898be6852cf29767ea2bbb38192efd"
+    sha256 "9d94d63bf3616825664a15a09f8d7e80200b43bce026408f322035f9cfaf089c"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/helmwave/helmwave/releases/download/0.9.2/helmwave_0.9.2_linux_amd64.tar.gz"
-    sha256 "566deab7437553bebee9fc86b56674af021a5c537d283135af482445b3cbfd1f"
+    sha256 "4bec38a78278e4c3057d749959b4fae64776ec0d3af7f2c4c7a4470bcb45a9a5"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/helmwave/helmwave/releases/download/0.9.2/helmwave_0.9.2_linux_arm64.tar.gz"
-    sha256 "305cd6aaed9139598a567469555438944520befca1989d225afeaa08bf5d8f13"
+    sha256 "e74116827fef58805493269f6bdccd5f0e03c5880dcca643314909240ec3e15c"
   end
 
   def install
