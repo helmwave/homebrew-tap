@@ -5,25 +5,25 @@
 class Helmwave < Formula
   desc "HelmWave is like docker-compose for helm"
   homepage ""
-  version "0.10.0"
+  version "0.10.1"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.10.0/helmwave_0.10.0_darwin_amd64.tar.gz"
-    sha256 "53e5cd5efc9ed8d589969583f6e5a13b3a05e21d2bef652d3ffd9fab3ad169fb"
+    url "https://github.com/helmwave/helmwave/releases/download/v0.10.1/helmwave_0.10.1_darwin_amd64.tar.gz"
+    sha256 "e97ef61f6175736d6a7b35a7bc58b34ac7d63fe099e2443e9042b5c3b55a4a97"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.10.0/helmwave_0.10.0_darwin_arm64.tar.gz"
-    sha256 "ee6c6c96b1c8bfffb1feb0cba96296647695480a8699c4bfb55497803f5de7f2"
+    url "https://github.com/helmwave/helmwave/releases/download/v0.10.1/helmwave_0.10.1_darwin_arm64.tar.gz"
+    sha256 "272c8353697a9b45f5dd38fcc3bea1e67dade42434e819b57b62c049d01a90c3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.10.0/helmwave_0.10.0_linux_amd64.tar.gz"
-    sha256 "7738c4ef637585aafb0f0ffe59bc91c285222d8a81153483e60af00f5eb24a51"
+    url "https://github.com/helmwave/helmwave/releases/download/v0.10.1/helmwave_0.10.1_linux_amd64.tar.gz"
+    sha256 "0319e0136ad5c82940470494711e8547e82709cc7dbd63323afb15855c1054b9"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.10.0/helmwave_0.10.0_linux_arm64.tar.gz"
-    sha256 "5c7ea39a292b399c06c6f5fdf6f4f213958f49047187c05660f15483d4bb0a47"
+    url "https://github.com/helmwave/helmwave/releases/download/v0.10.1/helmwave_0.10.1_linux_arm64.tar.gz"
+    sha256 "021c2fa3d53fad368c39373fa37abe351d2adabef7d17dcd4eb79858656d546b"
   end
 
   def install
