@@ -5,25 +5,30 @@
 class Helmwave < Formula
   desc "HelmWave is like docker-compose for helm"
   homepage ""
-  version "0.11.0"
+  version "0.12.0"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.11.0/helmwave_0.11.0_darwin_amd64.tar.gz"
-    sha256 "629c88c18e8cb90d9d27882d7f56e635c997c65bb3e8fe5873ca04d8ad536c4e"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.12.0/helmwave_0.12.0_darwin_amd64.tar.gz"
+      sha256 "b87a165f61129b4b166f2c2dc97bd992eab9ba15120d13dcb2d166dc79cae66d"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.12.0/helmwave_0.12.0_darwin_arm64.tar.gz"
+      sha256 "6d39efc73fa6eb79e8605c2f9d26a2552795a17c73b7dbfef11a1b1ff9a7df22"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.11.0/helmwave_0.11.0_darwin_arm64.tar.gz"
-    sha256 "f8f5b19aa86ab5f9c1495c9df3cef87dbbb9de5b4a77b13d24f87aa9745573cd"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.11.0/helmwave_0.11.0_linux_amd64.tar.gz"
-    sha256 "7eb3bd819283a97e78a3a96c3bd9030eb14acde3c2a424e6f0faf5d5aaad61c3"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/helmwave/helmwave/releases/download/v0.11.0/helmwave_0.11.0_linux_arm64.tar.gz"
-    sha256 "de7bd274275f9bc04070cd2e0e65165f7edf800468d304a2bf4609c486feb8ff"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.12.0/helmwave_0.12.0_linux_amd64.tar.gz"
+      sha256 "b721ff852ffd846b62bf5aa5e501a9926f5b441013d2798728b44d4f8f6a1e2b"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.12.0/helmwave_0.12.0_linux_arm64.tar.gz"
+      sha256 "481737b784870a6a1b062ecdb8688f0d32b3e604ae34eb81c3a7e004603119d7"
+    end
   end
 
   def install
