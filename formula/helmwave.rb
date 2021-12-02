@@ -5,21 +5,21 @@
 class Helmwave < Formula
   desc "HelmWave is like docker-compose for helm"
   homepage ""
-  version "0.16.2"
+  version "0.16.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.16.2/helmwave_0.16.2_darwin_arm64.tar.gz"
-      sha256 "9b98e0e0d53093d89ee752e761777db353b461251c216e2ba4d1a043a4ca2c80"
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.16.3/helmwave_0.16.3_darwin_amd64.tar.gz"
+      sha256 "8d5feccf961932f6623b48e35801b8cb4f14eac91b534a3f5bc78302abafd457"
 
       def install
         bin.install "helmwave"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.16.2/helmwave_0.16.2_darwin_amd64.tar.gz"
-      sha256 "9d3d04484ea6ce29c699816379835512131d482f05fbfb827046021481ca6d6c"
+    if Hardware::CPU.arm?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.16.3/helmwave_0.16.3_darwin_arm64.tar.gz"
+      sha256 "871c55183474219984a26e3120847a73ceea4d31e08e593059905c8cde556cdb"
 
       def install
         bin.install "helmwave"
@@ -29,16 +29,16 @@ class Helmwave < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.16.2/helmwave_0.16.2_linux_amd64.tar.gz"
-      sha256 "f824beff5cad11149df83639795c1733ec95732d7cb9898431036b2b174cf143"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.16.3/helmwave_0.16.3_linux_amd64.tar.gz"
+      sha256 "b07c278fec0728540178457b901e233795a936ebe974bb3fb7d4af5d360a9fa4"
 
       def install
         bin.install "helmwave"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.16.2/helmwave_0.16.2_linux_arm64.tar.gz"
-      sha256 "cc14a4dd0d6578227980abab80be95d870b67c8e16d973d9278f5a35dbadbef4"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.16.3/helmwave_0.16.3_linux_arm64.tar.gz"
+      sha256 "9dc7e9d93aecd38cfd01056cdfe8b8173267e163c56f62f8b869380cccef01fc"
 
       def install
         bin.install "helmwave"
