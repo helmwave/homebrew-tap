@@ -5,21 +5,21 @@
 class Helmwave < Formula
   desc "HelmWave is like docker-compose for helm"
   homepage ""
-  version "0.19.4"
+  version "0.19.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.4/helmwave_0.19.4_darwin_arm64.tar.gz"
-      sha256 "219ef1fb369234745ee0a3756796e6d52770798a0bbe848025a1d14b64da3a94"
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.5/helmwave_0.19.5_darwin_amd64.tar.gz"
+      sha256 "0acd0fa801aa9e025978628a096ee1f354dd829e223e06b69a3c2d0202ce4fc8"
 
       def install
         bin.install "helmwave"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.4/helmwave_0.19.4_darwin_amd64.tar.gz"
-      sha256 "13fe5af45bdb9b31ddd38204626782a7b2d105d0268f121381bc99d9a7c82ee6"
+    if Hardware::CPU.arm?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.5/helmwave_0.19.5_darwin_arm64.tar.gz"
+      sha256 "b3073fdae857d7ead7043143b1af71493099967fbc2316d9357962331702d6fa"
 
       def install
         bin.install "helmwave"
@@ -28,17 +28,17 @@ class Helmwave < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.4/helmwave_0.19.4_linux_amd64.tar.gz"
-      sha256 "9e281a0d2ea6692c92c5dc7797c1253db6d054543a996b7de7aa085b9ad269d8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.5/helmwave_0.19.5_linux_arm64.tar.gz"
+      sha256 "ae7eddc8a64589e882d9a549e987fb6207b35f696021066fe581928d19a96d54"
 
       def install
         bin.install "helmwave"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.4/helmwave_0.19.4_linux_arm64.tar.gz"
-      sha256 "dfd21f14599a26407c7973b0e0149d8c293d123c648250aabd27f170efdf137a"
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.5/helmwave_0.19.5_linux_amd64.tar.gz"
+      sha256 "4612962009d04461ac2462213fbc33d394d0d5ff144338f83d22854bfe1d833e"
 
       def install
         bin.install "helmwave"
