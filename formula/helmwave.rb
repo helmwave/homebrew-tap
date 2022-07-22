@@ -5,21 +5,21 @@
 class Helmwave < Formula
   desc "HelmWave is like docker-compose for helm"
   homepage ""
-  version "0.19.6"
+  version "0.19.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.6/helmwave_0.19.6_darwin_arm64.tar.gz"
-      sha256 "95d2ae94d5c7be0e5f6bcedb54b57d03c4c70fae842404a7e69b8b7a004bbaa1"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.7/helmwave_0.19.7_darwin_arm64.tar.gz"
+      sha256 "47589327ec52ad077eac3dd8b532c8c998e9da6f461f3106b74f18c978052137"
 
       def install
         bin.install "helmwave"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.6/helmwave_0.19.6_darwin_amd64.tar.gz"
-      sha256 "6da482852d2bfb551838476fcfbc2ccd298624a5cd25338ef199e5c196d23692"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.7/helmwave_0.19.7_darwin_amd64.tar.gz"
+      sha256 "c54f31f310b697ba71ed67f34bc23d806ef1d8fb17523af3a7714bb563a36a79"
 
       def install
         bin.install "helmwave"
@@ -29,16 +29,16 @@ class Helmwave < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.6/helmwave_0.19.6_linux_amd64.tar.gz"
-      sha256 "32fc52313edf1663e7be853c2b3db8d6acb4120a2d7ec9171162a012fa6bedf4"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.7/helmwave_0.19.7_linux_amd64.tar.gz"
+      sha256 "78955be361c7412a598150d85093927a5d8deb89affe5e7b5707d0e08865b036"
 
       def install
         bin.install "helmwave"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.19.6/helmwave_0.19.6_linux_arm64.tar.gz"
-      sha256 "d0c689c2f249b7fc308b8eae6d59c671019311fa03949480e0919b6d85aa646e"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.19.7/helmwave_0.19.7_linux_arm64.tar.gz"
+      sha256 "7119fbe53e25d5de5a6abfa52abed28899425227b58bd8cca5a5dbb98075f10c"
 
       def install
         bin.install "helmwave"
