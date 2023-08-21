@@ -5,13 +5,13 @@
 class Helmwave < Formula
   desc "True release manager for Kubernetes"
   homepage "https://helmwave.app"
-  version "0.30.1"
+  version "0.30.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.30.1/helmwave_0.30.1_darwin_amd64.tar.gz"
-      sha256 "6ed4def6b619e19e9bfb0848aea4921782da6524f81b971d5cdc4f2c166722b0"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.30.2/helmwave_0.30.2_darwin_amd64.tar.gz"
+      sha256 "753deea84c5fcfc146035210b119ca388677d9f9822d89b6cee79c991e4db6d7"
 
       def install
         bin.install "helmwave"
@@ -19,8 +19,8 @@ class Helmwave < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.30.1/helmwave_0.30.1_darwin_arm64.tar.gz"
-      sha256 "7e4ee0d2ca0ef6b33e9d067db9b0bfc1ccfff8adf1d6c11c450e2b2a82d4051d"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.30.2/helmwave_0.30.2_darwin_arm64.tar.gz"
+      sha256 "4e5f08d422a32ed633ebc68dd2fe50f364261092fdabb3bde19ff43d7f92e770"
 
       def install
         bin.install "helmwave"
@@ -30,18 +30,18 @@ class Helmwave < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.30.1/helmwave_0.30.1_linux_arm64.tar.gz"
-      sha256 "37c15dbef5dec2b44d6997a77e7a0be4985274e3855ce9853ae8b2c476b332be"
+    if Hardware::CPU.intel?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.30.2/helmwave_0.30.2_linux_amd64.tar.gz"
+      sha256 "9819e088ebd2538b2c7e018601d07b5eb0b8a39953773879851f2e2c9f884576"
 
       def install
         bin.install "helmwave"
         generate_completions_from_executable(bin/"helmwave", "completion", shells: [:bash, :zsh])
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.30.1/helmwave_0.30.1_linux_amd64.tar.gz"
-      sha256 "b3c56fd61df522652c4c96662ad965d6f57ec0fda3f31d3d516efd5a0c0c2d4a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/helmwave/helmwave/releases/download/v0.30.2/helmwave_0.30.2_linux_arm64.tar.gz"
+      sha256 "051e7e6e92d33e8664fe32a9c69d1c56ba8fa88b682645d7583b5463709a352c"
 
       def install
         bin.install "helmwave"
