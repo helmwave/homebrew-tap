@@ -5,13 +5,13 @@
 class Helmwave < Formula
   desc "True release manager for Kubernetes"
   homepage "https://helmwave.app"
-  version "0.32.4"
+  version "0.33.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.32.4/helmwave_0.32.4_darwin_arm64.tar.gz"
-      sha256 "527c9410d04e02f7f8bf6664a158a9a8ee071d04e5cca35a08bf65d428773c38"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.33.0/helmwave_0.33.0_darwin_arm64.tar.gz"
+      sha256 "f6f9d205630ead8d4b1c360c4bb80c783193384001b435cdb8f89d481fda644f"
 
       def install
         bin.install "helmwave"
@@ -19,8 +19,8 @@ class Helmwave < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.32.4/helmwave_0.32.4_darwin_amd64.tar.gz"
-      sha256 "73a01d6c8abb054d85981a41a169091840fe7949fc42b5b2d758c3ddbb251b7f"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.33.0/helmwave_0.33.0_darwin_amd64.tar.gz"
+      sha256 "5e114f2864ac1194aaa65892f85fe577fa13d23eeb19009ee29403cba7a63edd"
 
       def install
         bin.install "helmwave"
@@ -31,8 +31,8 @@ class Helmwave < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.32.4/helmwave_0.32.4_linux_arm64.tar.gz"
-      sha256 "f485f8bab2e0db53e5e1b148afea36281c4b71553ebf3edfb5f94553b40be0aa"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.33.0/helmwave_0.33.0_linux_arm64.tar.gz"
+      sha256 "9f156dd56d636e3d35c36e8d0c6d93d6e2ffb5fa779d7271dbe227ee2955fa81"
 
       def install
         bin.install "helmwave"
@@ -40,8 +40,8 @@ class Helmwave < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/helmwave/releases/download/v0.32.4/helmwave_0.32.4_linux_amd64.tar.gz"
-      sha256 "9e597d89d40afc73eae27ffaf726ceffaa87c6dad3f1862ac4fa360cde4e9d6d"
+      url "https://github.com/helmwave/helmwave/releases/download/v0.33.0/helmwave_0.33.0_linux_amd64.tar.gz"
+      sha256 "cfbba4eeac6b9828f2edd10bee484bf5b0cd7348fc632e3509244541257b95a2"
 
       def install
         bin.install "helmwave"
