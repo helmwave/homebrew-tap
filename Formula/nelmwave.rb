@@ -5,12 +5,12 @@
 class Nelmwave < Formula
   desc "Declarative release orchestrator on top of nelm"
   homepage "https://github.com/helmwave/nelmwave"
-  version "1.0.0"
+  version "1.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/helmwave/nelmwave/releases/download/v1.0.0/nelmwave_1.0.0_darwin_amd64.tar.gz"
-      sha256 "6c5c3b3f0e80abef7c6f6a9f074998060cddbb51671087873a1c704d06e50072"
+      url "https://github.com/helmwave/nelmwave/releases/download/v1.1.0/nelmwave_1.1.0_darwin_amd64.tar.gz"
+      sha256 "8f2e4a32e7ee475f3b38ebae7811b6e015697b173bb3768a28644af8c922e2ed"
 
       define_method(:install) do
         bin.install "nelmwave"
@@ -18,8 +18,8 @@ class Nelmwave < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/helmwave/nelmwave/releases/download/v1.0.0/nelmwave_1.0.0_darwin_arm64.tar.gz"
-      sha256 "5961757e7f4475fd071b1078dcf998ef0b7bd905257ed3cd8d5469ed857be4e3"
+      url "https://github.com/helmwave/nelmwave/releases/download/v1.1.0/nelmwave_1.1.0_darwin_arm64.tar.gz"
+      sha256 "a1f46df046b27829a6a63be14afd51981b896d69114e4f3b53ad0f4238184b87"
 
       define_method(:install) do
         bin.install "nelmwave"
@@ -30,16 +30,16 @@ class Nelmwave < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/nelmwave/releases/download/v1.0.0/nelmwave_1.0.0_linux_amd64.tar.gz"
-      sha256 "38cde2595f57b7e6267699cee055c681dc7f58c831acdc2ca9f6104f997e5803"
+      url "https://github.com/helmwave/nelmwave/releases/download/v1.1.0/nelmwave_1.1.0_linux_amd64.tar.gz"
+      sha256 "ce3d43aa6f8dbbc52d17ca11e9c0ca928d40573ecad160549801780c0d541d6b"
       define_method(:install) do
         bin.install "nelmwave"
         generate_completions_from_executable(bin/"nelmwave", "completion", shells: [:bash, :zsh, :fish])
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/helmwave/nelmwave/releases/download/v1.0.0/nelmwave_1.0.0_linux_arm64.tar.gz"
-      sha256 "8518b68f493940ca7e07359a69bfdf07d9cb29ec3ddb1013f88f1cc04ba553b3"
+      url "https://github.com/helmwave/nelmwave/releases/download/v1.1.0/nelmwave_1.1.0_linux_arm64.tar.gz"
+      sha256 "a19f574df71eae7e6125ce8ae43ce491503128f5b594a9f8683d619d6fc067b0"
       define_method(:install) do
         bin.install "nelmwave"
         generate_completions_from_executable(bin/"nelmwave", "completion", shells: [:bash, :zsh, :fish])
